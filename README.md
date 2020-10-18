@@ -1,2 +1,3 @@
 # NoClass
-A bot written in node-js to notify the initiation of roll-call.
+
+A bot written in node-js to send discord & pushbullet notifications when it's time for attendance.
