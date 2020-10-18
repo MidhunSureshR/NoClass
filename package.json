@@ -1,13 +1,14 @@
 {
-  "name": "we_sux",
+  "name": "NoClass",
   "version": "1.0.0",
-  "description": "",
+  "description": "Bot that lets you skip classes!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "node index.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "R Midhun Suresh",
+  "license": "GNU GPLV3",
   "dependencies": {
     "axios": "^0.20.0",
     "cli-progress": "^3.8.2",
