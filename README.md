@@ -30,12 +30,12 @@ _Example templates for (2) and (3) are available in their respective directories
 
 4. Install the dependenies by running the follow command in the root directory of the project.
 
-```bash
+```properties
 npm install
 ```
 
 5. Run the bot with:
 
-```bash
+```properties
 npm start
 ```
