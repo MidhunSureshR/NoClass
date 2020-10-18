@@ -9,10 +9,6 @@ let discordConfig;
 const readConfig = () => {
   const file = fs.readFileSync('./notification/discord/config.yaml', 'utf8');
   discordConfig = yaml.parse(file);
-  console.log(`Webhook URL = ${discordConfig.webhook_url}
-              Discord Username = ${discordConfig.discord.username}
-              Avatar url = ${discordConfig.discord.avatar_url}
-              Embedd color = ${discordConfig.discord.embed_color}`);
 };
 
 
