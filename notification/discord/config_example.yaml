@@ -1,0 +1,7 @@
+# Remember to rename this file to config.yaml
+
+webhook_url: "INSERT_DISCORD_WEBHOOK_URL"
+discord:
+  embed_color: 16056575 # Color for discord embed (convert hex code to decimal)
+  username: "INSERT_BOT_USERNAME"
+  avatar_url: "INSERT_BOT_AVATAR_URL"
