@@ -1,11 +1,8 @@
 const axios = require('axios');
 const fs = require('fs');
 const yaml = require('yaml');
-/* const API_URL = "https://api.pushbullet.com/v2/pushes";
-const ACCESS_TOKEN = "o.W1e51lS5ogYl3jzmKG25L4FkyI53Q8RM"; */
 
 let pushbulletConfig;
-
 const readConfig = () => {
   const file = fs.readFileSync('./notification/pushbullet/config.yaml', 'utf8');
   pushbulletConfig = yaml.parse(file);
