@@ -6,9 +6,6 @@ let pushbulletConfig;
 const readConfig = () => {
   const file = fs.readFileSync('./notification/pushbullet/config.yaml', 'utf8');
   pushbulletConfig = yaml.parse(file);
-  console.log(`API_URL = ${pushbulletConfig.api_url}
-               ACCESS_TOKEN = ${pushbulletConfig.access_token}`
-            );
 };
 
 const getPushBulletData = (title, description) => {
