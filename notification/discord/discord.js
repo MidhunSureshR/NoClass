@@ -1,6 +1,4 @@
-const webhook = "https://discord.com/api/webhooks/767331683828891668/hNXleKWLbq5Zl-XotI9iIZ3FQgyRjtzHIzkel5iJnKEeApixtZHjyVVeidhSc52BEGmJ";
 const axios = require('axios');
-
 const yaml = require('yaml');
 const fs = require('fs');
 
