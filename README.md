@@ -1,5 +1,6 @@
 # NoClass
 
+![screenshot](https://i.imgur.com/VgelhwG.png)
 A google-meet bot written in node-js to send discord & pushbullet notifications when it's time for attendance.
 
 ## Does this work out of the box?
