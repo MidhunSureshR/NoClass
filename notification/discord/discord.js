@@ -28,9 +28,10 @@ const getDiscordJSONData = (title, description) => {
 };
 
 
-const sendNotification = () => {
+const sendNotification = (formLink = null) => {
   readConfig();
-  const data = getDiscordJSONData("Attendance Detected", "Time for attendance bwoies!!");
+  const message = `Time for attendance bwoies!!\n${formLink?"Form link : " + formLink: ""}`;
+  const data = getDiscordJSONData("Attendance Detected", message);
   axios.post(discordConfig.webhook_url, data)
     .catch(error => console.error(error));
 };

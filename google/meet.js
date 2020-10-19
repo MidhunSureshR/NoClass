@@ -75,11 +75,14 @@ const threshold = 2;
 let stop = false;
 
 const analyzeMessage = message => {
+    // Special case when the teacher takes attendance through google form
+    const formDetected = message.search("forms.gle") !== -1;
+
     if (stop) return;
     detectionCount = message.search("present") === -1 ? detectionCount : detectionCount + 1;
-    if (detectionCount >= threshold) {
-        discord.sendNotification();
-        pushbullet.sendNotification();
+    if (formDetected || detectionCount >= threshold) {
+        discord.sendNotification(formDetected? message : null);
+        pushbullet.sendNotification(formDetected? message : null);
         stop = true;
         return true;
     }

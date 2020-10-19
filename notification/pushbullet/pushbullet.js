@@ -20,9 +20,10 @@ const getPushBulletData = (title, description) => {
       return data;
 };
 
-const sendNotification = () => {
+const sendNotification = (formLink = null) => {
     readConfig();
-    const data = getPushBulletData("AttendanceBot", "Looks like it's time for attendance!!");
+    const message = `Time for attendance bwoies!!\n${formLink?"Form link : " + formLink: ""}`;
+    const data = getPushBulletData("AttendanceBot", message);
     const config = {
         headers :
         {
