@@ -6,27 +6,27 @@ const MeetAPI = require('./google/meet');
 const Progress = require('./progress');
 
 const performGoogleLogin = async () => {
-    let bar;
     const page = await browser.initBrowser();
     const newBar = steps => {bar = UI.createBar(steps*100, "Google Login");};
-    const p = Progress.bindProgress(newBar, () => bar.increment(100));
+    const p = Progress.getProgressObject(newBar, () => bar.increment(100));
     await GoogleAccount.loginGoogle(page, Credentials.email, Credentials.password, p);
     await page.close();
 };
 
 const joinMeet = async meetCode => {
-  let bar = UI.createBar(400, "Enter Google Meet");
-  const page = await MeetAPI.automateMeet(`https://meet.google.com/${meetCode}`, bar);
+  const newBar = steps => {bar = UI.createBar(steps*100, "Google Meet");};
+  const p = Progress.getProgressObject(newBar, () => bar.increment(100));
+  const page = await MeetAPI.automateMeet(`https://meet.google.com/${meetCode}`, p);
   bar.stop();
-  console.log("Setup Completed " +  "✅".green);
+  UI.showSuccessMessage("Setup Completed");
   return page;
 };
 
 const pollForAttendance = async page => {
-  console.log("Hooked to Chat Messages " +  "✅".green);
+  UI.showSuccessMessage("Hooked to Chat Messages");
   console.log("\nAnalyzing chat messages".bgWhite.black);
   while(true){
-    const callback = () => console.log("Attendance Detected " +  "✅".green);
+    const callback = () => UI.showSuccessMessage("Attendance Detected");
     await MeetAPI.scanForMessages(page, callback);
     await page.waitForTimeout(2000); 
   }

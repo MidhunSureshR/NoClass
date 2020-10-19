@@ -5,11 +5,11 @@ These functions will call progressInit with one argument indicating the number o
 These functions will call progressUpdate when each step is completed.
 */
 
-const bindProgress = (progressInit, progressUpdate) =>{
+const getProgressObject = (progressInit, progressUpdate) =>{
     return {
         progressInit: progressInit,
         progressUpdate: progressUpdate
     };
 };
 
-exports.bindProgress = bindProgress;
+exports.getProgressObject = getProgressObject;

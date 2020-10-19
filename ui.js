@@ -30,8 +30,10 @@ const set_bar = (bar, progress) => {
 
 const stop_bar = bar => bar.stop();
 
+const showSuccessMessage = message => console.log(message +  " ✅".green);
 
 exports.showTitle = showTitle;
 exports.createBar = createBar;
 exports.set_bar = set_bar;
 exports.stop_bar = stop_bar;
+exports.showSuccessMessage = showSuccessMessage;
