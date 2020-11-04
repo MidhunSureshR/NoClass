@@ -24,15 +24,18 @@ const sendNotification = (formLink = null) => {
     readConfig();
     const message = `Time for attendance bwoies!!\n${formLink?"Form link : " + formLink: ""}`;
     const data = getPushBulletData("AttendanceBot", message);
-    const config = {
-        headers :
-        {
-        'Content-Type': 'application/json',
-        'Access-Token': pushbulletConfig.access_token
-        }
-    };
-    axios.post(pushbulletConfig.api_url, data, config)
-         .catch(error => console.log(error));
+    const send = access_token => {
+        const config = {
+            headers :
+            {
+            'Content-Type': 'application/json',
+            'Access-Token': access_token
+            }
+        };
+        axios.post(pushbulletConfig.api_url, data, config)
+            .catch(error => console.log(error));
+  };
+  pushbulletConfig.access_tokens.forEach(token => send(token));
 };
 
 exports.sendNotification = sendNotification;

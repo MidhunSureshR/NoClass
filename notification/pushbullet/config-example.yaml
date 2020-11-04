@@ -1,4 +1,6 @@
 # Remember to rename this file to config.yaml
 
 api_url: "https://api.pushbullet.com/v2/pushes" # Current API URL
-access_token: "INSERT_API_ACCESS_TOKEN"
+access_token:
+  - "INSERT_API_ACCESS_TOKEN_1"
+  - "INSERT_API_ACCESS_TOKEN_2"

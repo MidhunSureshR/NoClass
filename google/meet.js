@@ -76,7 +76,7 @@ const scanForMessages = async (page, onDetection) => {
 };
 
 let detectionCount = 0;
-const threshold = 2;
+const threshold = 1;
 let stop = false;
 
 const analyzeMessage = message => {
@@ -84,7 +84,7 @@ const analyzeMessage = message => {
     const formDetected = message.search("forms.gle") !== -1;
 
     if (stop) return;
-    detectionCount = message.search("present") === -1 ? detectionCount : detectionCount + 1;
+    detectionCount = message.search(/present/i) === -1 ? detectionCount : detectionCount + 1;
     if (formDetected || detectionCount >= threshold) {
         discord.sendNotification(formDetected? message : null);
         pushbullet.sendNotification(formDetected? message : null);
