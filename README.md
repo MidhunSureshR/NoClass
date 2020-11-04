@@ -39,5 +39,9 @@ npm install
 5. Run the bot with:
 
 ```properties
-npm start
+npm start <google_meet_code>
+```
+eg:
+```properties
+npm start gut-gawx-wcz
 ```
